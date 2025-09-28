@@ -40,11 +40,17 @@ class ProjectsComponent {
     }
     
     render() {
-        const container = $('#projeler');
+        const container = $('#projeler-container');
         if (!container) return;
         
         container.innerHTML = this.getHTML();
         this.updateProjectCards();
+        
+        // Navigation sistemine yeni section'ı kaydet
+        const projectsSection = $('#projeler');
+        if (projectsSection) {
+            navigationSystem.addSection('projeler', projectsSection);
+        }
     }
     
     getHTML() {

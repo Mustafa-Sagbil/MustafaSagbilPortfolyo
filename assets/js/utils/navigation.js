@@ -289,6 +289,11 @@ class NavigationSystem {
             isVisible: false
         });
         this.updateSectionPositions();
+        
+        // Yeni section eklendikten sonra pozisyonları güncelle
+        setTimeout(() => {
+            this.updateSectionPositions();
+        }, 100);
     }
     
     removeSection(sectionId) {
