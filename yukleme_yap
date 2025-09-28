@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Mustafa Sağbil Portföy - Kısa Yükleme Komutu
+# Bu dosya yukleme_yap.sh scriptini çalıştırır
+
+# Script'in bulunduğu dizini bul
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# yukleme_yap.sh scriptini çalıştır
+exec "$SCRIPT_DIR/yukleme_yap.sh" "$@"
