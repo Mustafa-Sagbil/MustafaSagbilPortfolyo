@@ -1,76 +1,45 @@
 /* 
- * Mustafa Sağbil Portföy Sitesi - Ana Stil Dosyası
- * Modern CSS özellikleri ve responsive tasarım ile oluşturulmuştur
+ * Mustafa Sağbil Portföy - Ana CSS Dosyası
+ * Tüm CSS dosyalarını import eder ve genel stilleri içerir
  */
 
-/* CSS Variables - Renk paleti ve temel değerler */
-:root {
-    --ana-renk: #2563eb;
-    --ikincil-renk: #1e40af;
-    --arka-plan-renk: #f8fafc;
-    --metin-renk: #1e293b;
-    --metin-acik: #64748b;
-    --beyaz: #ffffff;
-    --golge: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --golge-buyuk: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --border-radius: 0.75rem;
-    --gecis-sure: 0.3s;
-    --font-boyut-kucuk: 0.875rem;
-    --font-boyut-normal: 1rem;
-    --font-boyut-buyuk: 1.5rem;
-    --font-boyut-cok-buyuk: 2.5rem;
-}
+/* CSS Variables */
+@import url('./variables.css');
 
-/* Dark mode için CSS variables */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --arka-plan-renk: #0f172a;
-        --metin-renk: #f1f5f9;
-        --metin-acik: #94a3b8;
-        --beyaz: #1e293b;
-    }
-}
+/* Layout */
+@import url('./layout/grid.css');
+@import url('./layout/responsive.css');
 
-/* Reset ve temel stiller */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Components */
+@import url('./components/navbar.css');
+@import url('./components/hero.css');
 
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-}
-
+/* Genel Stiller */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--metin-renk);
     background-color: var(--arka-plan-renk);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Ana container */
+/* Ana Container - Eski yapıyı korumak için */
 .ana-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: var(--spacing-buyuk);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
 }
 
-/* Merhaba kutusu */
+/* Merhaba Kutusu - Geçici olarak korundu */
 .merhaba-kutusu {
     text-align: center;
     background: var(--beyaz);
-    padding: 3rem 2rem;
+    padding: var(--spacing-cok-buyuk) var(--spacing-buyuk);
     border-radius: var(--border-radius);
     box-shadow: var(--golge-buyuk);
     transition: all var(--gecis-sure) ease;
@@ -83,12 +52,11 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Merhaba başlık */
 .merhaba-baslik {
     font-size: var(--font-boyut-cok-buyuk);
     font-weight: 700;
     color: var(--ana-renk);
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-normal);
     background: linear-gradient(135deg, var(--ana-renk), var(--ikincil-renk));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,7 +64,6 @@ body {
     line-height: 1.2;
 }
 
-/* Merhaba alt yazı */
 .merhaba-alt-yazi {
     font-size: var(--font-boyut-buyuk);
     color: var(--metin-acik);
@@ -104,14 +71,14 @@ body {
     margin-bottom: 0;
 }
 
-/* Responsive tasarım */
+/* Responsive Design */
 @media (max-width: 768px) {
     .ana-container {
-        padding: 1rem;
+        padding: var(--spacing-normal);
     }
     
     .merhaba-kutusu {
-        padding: 2rem 1.5rem;
+        padding: var(--spacing-buyuk) var(--spacing-normal);
     }
     
     .merhaba-baslik {
@@ -131,22 +98,6 @@ body {
     .merhaba-alt-yazi {
         font-size: 1.125rem;
     }
-}
-
-/* Animasyonlar (gelecek için hazır) */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.merhaba-kutusu {
-    animation: fadeInUp 0.8s ease-out;
 }
 
 /* Accessibility */

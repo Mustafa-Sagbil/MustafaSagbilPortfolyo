@@ -1,0 +1,103 @@
+/* 
+ * Mustafa Sağbil Portföy - Grid Layout Sistemi
+ * Responsive grid yapısı ve layout stilleri
+ */
+
+/* Container Sistemi */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-buyuk);
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 var(--spacing-buyuk);
+}
+
+/* Grid Sistemi */
+.grid {
+    display: grid;
+    gap: var(--spacing-buyuk);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Flexbox Utilities */
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Spacing Utilities */
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-kucuk); }
+.p-2 { padding: var(--spacing-normal); }
+.p-3 { padding: var(--spacing-buyuk); }
+.p-4 { padding: var(--spacing-cok-buyuk); }
+
+.m-0 { margin: 0; }
+.m-1 { margin: var(--spacing-kucuk); }
+.m-2 { margin: var(--spacing-normal); }
+.m-3 { margin: var(--spacing-buyuk); }
+.m-4 { margin: var(--spacing-cok-buyuk); }
+
+/* Text Alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Display Utilities */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-normal);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-kucuk);
+    }
+}

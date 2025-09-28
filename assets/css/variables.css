@@ -1,0 +1,56 @@
+/* 
+ * Mustafa Sağbil Portföy - CSS Variables
+ * Tüm renk paleti ve temel değerler bu dosyada tanımlanmıştır
+ */
+
+:root {
+    /* Renk Paleti */
+    --ana-renk: #2563eb;
+    --ikincil-renk: #1e40af;
+    --arka-plan-renk: #f8fafc;
+    --metin-renk: #1e293b;
+    --metin-acik: #64748b;
+    --beyaz: #ffffff;
+    
+    /* Gölgeler */
+    --golge: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --golge-buyuk: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Border ve Radius */
+    --border-radius: 0.75rem;
+    --border-radius-kucuk: 0.5rem;
+    
+    /* Geçişler */
+    --gecis-sure: 0.3s;
+    --gecis-sure-hizli: 0.15s;
+    --gecis-sure-yavas: 0.5s;
+    
+    /* Font Boyutları */
+    --font-boyut-kucuk: 0.875rem;
+    --font-boyut-normal: 1rem;
+    --font-boyut-buyuk: 1.5rem;
+    --font-boyut-cok-buyuk: 2.5rem;
+    --font-boyut-dev: 3rem;
+    
+    /* Spacing */
+    --spacing-kucuk: 0.5rem;
+    --spacing-normal: 1rem;
+    --spacing-buyuk: 2rem;
+    --spacing-cok-buyuk: 3rem;
+    
+    /* Z-Index */
+    --z-navbar: 1000;
+    --z-dropdown: 1001;
+    --z-modal: 1002;
+    --z-tooltip: 1003;
+}
+
+/* Dark mode için CSS variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --arka-plan-renk: #0f172a;
+        --metin-renk: #f1f5f9;
+        --metin-acik: #94a3b8;
+        --beyaz: #1e293b;
+    }
+}

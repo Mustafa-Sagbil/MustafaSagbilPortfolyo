@@ -1,0 +1,195 @@
+/* 
+ * Mustafa Sağbil Portföy - Navbar Component
+ * Modern ve responsive navigation bar stilleri
+ */
+
+/* Navbar Ana Container */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--beyaz);
+    box-shadow: var(--golge);
+    z-index: var(--z-navbar);
+    transition: all var(--gecis-sure) ease;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-buyuk);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+/* Brand/Logo */
+.navbar-brand {
+    flex-shrink: 0;
+}
+
+.brand-link {
+    text-decoration: none;
+    color: var(--ana-renk);
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color var(--gecis-sure) ease;
+}
+
+.brand-link:hover {
+    color: var(--ikincil-renk);
+}
+
+.brand-text {
+    background: linear-gradient(135deg, var(--ana-renk), var(--ikincil-renk));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-buyuk);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--metin-renk);
+    font-weight: 500;
+    font-size: var(--font-boyut-normal);
+    padding: var(--spacing-kucuk) var(--spacing-normal);
+    border-radius: var(--border-radius-kucuk);
+    transition: all var(--gecis-sure) ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--ana-renk);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--ana-renk);
+    transition: all var(--gecis-sure) ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-kucuk);
+    z-index: var(--z-dropdown);
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: var(--metin-renk);
+    margin: 3px 0;
+    transition: all var(--gecis-sure) ease;
+    border-radius: 2px;
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 var(--spacing-normal);
+    }
+    
+    .navbar-toggle {
+        display: flex;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--beyaz);
+        box-shadow: var(--golge-buyuk);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--gecis-sure) ease;
+        z-index: 999;
+    }
+    
+    .navbar-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        padding: var(--spacing-buyuk) var(--spacing-normal);
+        gap: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: var(--spacing-normal) 0;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* Navbar Scroll Effect (Gelecekte eklenebilir) */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
