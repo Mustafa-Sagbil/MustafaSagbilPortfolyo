@@ -1,0 +1,68 @@
+{
+  "language": "tr",
+  "languageName": "Türkçe",
+  "direction": "ltr",
+  "navbar": {
+    "home": "Ana Sayfa",
+    "projects": "Projeler",
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "contact": "İletişim"
+  },
+  "home": {
+    "title": "Projelerimi Tanıttığım Sayfama Hoşgeldiniz",
+    "subtitle": "Portföy siteniz hazırlanıyor...",
+    "description": "Modern, responsive ve kullanıcı dostu portföy sitesi. Temiz mimari prensipleri ile geliştirilmiş, modüler yapıda organize edilmiş profesyonel web sitesi."
+  },
+  "projects": {
+    "title": "Projelerim",
+    "subtitle": "Geliştirdiğim projeleri keşfedin. Her proje, farklı teknolojiler ve yaklaşımlarla oluşturulmuş, gerçek dünya problemlerini çözen çözümlerdir.",
+    "filters": {
+      "all": "Tümü",
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile Development",
+      "desktopApplications": "Desktop Applications",
+      "dataScience": "Data Science"
+    },
+    "search": {
+      "placeholder": "Proje ara...",
+      "noResults": "Aradığınız kriterlere uygun proje bulunamadı."
+    },
+    "status": {
+      "completed": "Tamamlandı",
+      "inProgress": "Devam Ediyor",
+      "planning": "Planlama",
+      "stopped": "Durduruldu"
+    },
+    "actions": {
+      "demo": "Demo",
+      "github": "GitHub",
+      "liveDemo": "Canlı Demo"
+    },
+    "details": {
+      "features": "Özellikler",
+      "challenges": "Zorluklar",
+      "learnings": "Öğrenilenler"
+    }
+  },
+  "about": {
+    "title": "Hakkımda",
+    "subtitle": "Benim hakkımda daha fazla bilgi edinin"
+  },
+  "skills": {
+    "title": "Yetenekler",
+    "subtitle": "Teknoloji yeterliliklerim ve uzmanlık alanlarım"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Benimle iletişime geçin",
+    "email": "E-posta",
+    "description": "Projeleriniz, işbirliği teklifleri veya herhangi bir sorunuz için benimle iletişime geçebilirsiniz."
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata oluştu",
+    "close": "Kapat",
+    "menu": "Menüyü aç/kapat"
+  }
+}

@@ -186,6 +186,54 @@
     .nav-link::after {
         display: none;
     }
+    
+    .language-switcher {
+        margin-left: 0;
+        margin-top: var(--spacing-normal);
+        justify-content: center;
+    }
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 0.25rem;
+    margin-left: var(--spacing-normal);
+    border-radius: var(--border-radius-kucuk);
+    overflow: hidden;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.language-btn {
+    padding: var(--spacing-kucuk) var(--spacing-normal);
+    background: transparent;
+    border: none;
+    color: var(--metin-renk);
+    font-size: var(--font-boyut-kucuk);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--gecis-sure) ease;
+    position: relative;
+}
+
+.language-btn:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--ana-renk);
+}
+
+.language-btn.active {
+    background: var(--ana-renk);
+    color: var(--beyaz);
+}
+
+.language-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--beyaz);
 }
 
 /* Navbar Scroll Effect (Gelecekte eklenebilir) */

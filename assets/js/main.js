@@ -7,6 +7,7 @@ import { domReady } from './utils/helpers.js';
 import Navbar from './components/navbar.js';
 import ProjectsComponent from './components/projects.js';
 import navigationSystem from './utils/navigation.js';
+import languageSystem from './utils/language.js';
 
 class Portfolio {
     constructor() {
@@ -21,7 +22,11 @@ class Portfolio {
         });
     }
     
-    initializeComponents() {
+    async initializeComponents() {
+        // Dil sistemini başlat ve yüklenmesini bekle
+        this.language = languageSystem;
+        await this.waitForLanguageSystem();
+        
         // Navbar'ı başlat
         this.navbar = new Navbar();
         
@@ -29,14 +34,32 @@ class Portfolio {
         this.navigation = navigationSystem;
         
         // Projeler component'ini sadece projeler sayfasında başlat
-        if (window.location.pathname.includes('projects.html') || $('#projeler-container')) {
+        if (window.location.pathname.includes('projects.html') || $('#projeler')) {
             this.projects = new ProjectsComponent();
+        }
+        
+        // İletişim sayfası için dil sistemini başlat
+        if (window.location.pathname.includes('contact.html')) {
+            this.initializeContactPage();
         }
         
         // Diğer component'ler buraya eklenecek
         // this.hero = new Hero();
         // this.about = new About();
         // this.contact = new Contact();
+    }
+    
+    async waitForLanguageSystem() {
+        // Dil sisteminin tam olarak yüklenmesini bekle
+        while (!this.language.translations || Object.keys(this.language.translations).length === 0) {
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+        console.log('Language system yüklendi:', Object.keys(this.language.translations).length, 'çeviri anahtarı');
+    }
+    
+    initializeContactPage() {
+        // İletişim sayfası için dil sistemini başlat
+        console.log('İletişim sayfası dil sistemi başlatıldı');
     }
     
     bindGlobalEvents() {

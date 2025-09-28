@@ -44,15 +44,54 @@
                         <a href="#yetenekler" class="nav-link">Yetenekler</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#iletisim" class="nav-link">İletişim</a>
+                        <a href="contact.html" class="nav-link">İletişim</a>
                     </li>
                 </ul>
+                
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="tr">Türkçe</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Projeler Bölümü -->
-    <div id="projeler-container"></div>
+    <section id="projeler" class="projects-section">
+        <div class="projects-container">
+            <div class="projects-header">
+                <h2 class="projects-title">Projelerim</h2>
+                <p class="projects-subtitle">
+                    Geliştirdiğim projeleri keşfedin. Her proje, farklı teknolojiler ve yaklaşımlarla oluşturulmuş, gerçek dünya problemlerini çözen çözümlerdir.
+                </p>
+            </div>
+            
+            <div class="projects-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="Web Development">Web Development</button>
+                <button class="filter-btn" data-filter="Mobile Development">Mobile Development</button>
+                <button class="filter-btn" data-filter="Desktop Applications">Desktop Applications</button>
+                <button class="filter-btn" data-filter="Data Science">Data Science</button>
+            </div>
+            
+            <div class="projects-search">
+                <div class="search-icon">🔍</div>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Proje ara..."
+                    id="project-search"
+                >
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <div class="projects-loading">
+                    <p>Yükleniyor...</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- JavaScript -->
     <script type="module" src="assets/js/main.js"></script>

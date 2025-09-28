@@ -3,8 +3,11 @@
     {
       "id": "portfolyo-sayfasi-dizayni",
       "title": "Portföy Sayfası Dizaynı",
+      "titleEn": "Portfolio Page Design",
       "description": "Modern, responsive ve kullanıcı dostu portföy sitesi tasarımı. Temiz mimari prensipleri ile geliştirilmiş, modüler yapıda organize edilmiş profesyonel web sitesi.",
+      "descriptionEn": "Modern, responsive and user-friendly portfolio site design. A professional website developed with clean architecture principles and organized in a modular structure.",
       "shortDescription": "Kişisel portföy sitesi için modern tasarım ve geliştirme",
+      "shortDescriptionEn": "Modern design and development for personal portfolio site",
       "technologies": [
         "HTML5",
         "CSS3", 
@@ -64,6 +67,75 @@
         "modern",
         "portfolio",
         "github-pages"
+      ]
+    },
+    {
+      "id": "e-ticaret-platformu",
+      "title": "E-Ticaret Platformu",
+      "titleEn": "E-Commerce Platform",
+      "description": "Modern e-ticaret platformu. React, Node.js ve MongoDB kullanılarak geliştirilmiş, ölçeklenebilir ve güvenli online alışveriş deneyimi sunan platform.",
+      "descriptionEn": "Modern e-commerce platform. A scalable and secure online shopping experience platform developed using React, Node.js and MongoDB.",
+      "shortDescription": "Modern e-ticaret platformu geliştirme",
+      "shortDescriptionEn": "Modern e-commerce platform development",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "JWT",
+        "Stripe API"
+      ],
+      "category": "Web Development",
+      "status": "Devam Ediyor",
+      "date": "2025-09-25",
+      "thumbnail": "e-ticaret-platformu/images/thumbnail.jpg",
+      "images": [
+        "e-ticaret-platformu/images/screenshot-home.jpg",
+        "e-ticaret-platformu/images/screenshot-product.jpg",
+        "e-ticaret-platformu/images/screenshot-cart.jpg"
+      ],
+      "demoUrl": "https://e-ticaret-demo.vercel.app",
+      "githubUrl": "https://github.com/Mustafa-Sagbil/e-ticaret-platformu",
+      "features": [
+        "Kullanıcı kayıt ve giriş sistemi",
+        "Ürün katalog yönetimi",
+        "Sepet ve ödeme sistemi",
+        "Admin paneli",
+        "Gerçek zamanlı bildirimler",
+        "Responsive tasarım",
+        "Güvenli ödeme entegrasyonu",
+        "Arama ve filtreleme",
+        "Sipariş takip sistemi",
+        "Çoklu dil desteği"
+      ],
+      "challenges": [
+        "Ölçeklenebilir veritabanı tasarımı",
+        "Güvenli ödeme sistemi entegrasyonu",
+        "Gerçek zamanlı bildirim sistemi",
+        "Performans optimizasyonu"
+      ],
+      "learnings": [
+        "MERN stack geliştirme",
+        "JWT authentication",
+        "Stripe API entegrasyonu",
+        "MongoDB aggregation",
+        "React state management"
+      ],
+      "tools": [
+        "VS Code",
+        "MongoDB Compass",
+        "Postman",
+        "Git",
+        "Vercel"
+      ],
+      "duration": "2 hafta",
+      "difficulty": "İleri",
+      "tags": [
+        "e-commerce",
+        "react",
+        "nodejs",
+        "mongodb",
+        "fullstack"
       ]
     }
   ],

@@ -107,28 +107,39 @@ class Navbar {
     }
     
     smoothScrollTo(target) {
-        const targetPosition = target.offsetTop - 70; // Navbar height
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 800;
-        let startTime = null;
+        const navbarHeight = 70;
+        const targetPosition = target.offsetTop - navbarHeight;
         
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = ease(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
+        // Modern smooth scroll API kullan
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            // Fallback için eski yöntem
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 800;
+            let startTime = null;
+            
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+            
+            requestAnimationFrame(animation);
         }
-        
-        function ease(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-        }
-        
-        requestAnimationFrame(animation);
     }
     
     setActiveLink() {

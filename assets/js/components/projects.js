@@ -5,6 +5,7 @@
 
 import { $, $$, addClass, removeClass, toggleClass, addEventListeners } from '../utils/helpers.js';
 import navigationSystem from '../utils/navigation.js';
+import languageSystem from '../utils/language.js';
 
 class ProjectsComponent {
     constructor() {
@@ -18,9 +19,15 @@ class ProjectsComponent {
     }
     
     async init() {
-        await this.loadProjects();
-        this.render();
-        this.bindEvents();
+        try {
+            await this.loadProjects();
+            this.render();
+            this.bindEvents();
+            this.bindLanguageEvents();
+            console.log('ProjectsComponent başlatıldı, proje sayısı:', this.projects.length);
+        } catch (error) {
+            console.error('ProjectsComponent başlatılırken hata:', error);
+        }
     }
     
     async loadProjects() {
@@ -40,17 +47,14 @@ class ProjectsComponent {
     }
     
     render() {
-        const container = $('#projeler-container');
+        const container = $('#projeler');
         if (!container) return;
         
-        container.innerHTML = this.getHTML();
+        // Mevcut HTML yapısını koru, sadece proje kartlarını güncelle
         this.updateProjectCards();
         
         // Navigation sistemine yeni section'ı kaydet
-        const projectsSection = $('#projeler');
-        if (projectsSection) {
-            navigationSystem.addSection('projeler', projectsSection);
-        }
+        navigationSystem.addSection('projeler', container);
     }
     
     getHTML() {
@@ -60,8 +64,7 @@ class ProjectsComponent {
                     <div class="projects-header">
                         <h2 class="projects-title">Projelerim</h2>
                         <p class="projects-subtitle">
-                            Geliştirdiğim projeleri keşfedin. Her proje, farklı teknolojiler ve 
-                            yaklaşımlarla oluşturulmuş, gerçek dünya problemlerini çözen çözümlerdir.
+                            Geliştirdiğim projeleri keşfedin. Her proje, farklı teknolojiler ve yaklaşımlarla oluşturulmuş, gerçek dünya problemlerini çözen çözümlerdir.
                         </p>
                     </div>
                     
@@ -94,7 +97,7 @@ class ProjectsComponent {
     getLoadingHTML() {
         return `
             <div class="projects-loading">
-                <p>Projeler yükleniyor...</p>
+                <p>Yükleniyor...</p>
             </div>
         `;
     }
@@ -108,7 +111,9 @@ class ProjectsComponent {
             `;
         }
         
-        return this.filteredProjects.map(project => this.getProjectCardHTML(project)).join('');
+        return this.filteredProjects.map(project => {
+            return this.getProjectCardHTML(project);
+        }).join('');
     }
     
     getProjectCardHTML(project) {
@@ -117,15 +122,21 @@ class ProjectsComponent {
             `<span class="tech-tag">${tech}</span>`
         ).join('');
         
+        // Dil değişimine göre proje bilgilerini seç
+        const currentLang = this.getCurrentLanguage();
+        const title = currentLang === 'en' ? (project.titleEn || project.title) : project.title;
+        const description = currentLang === 'en' ? (project.shortDescriptionEn || project.shortDescription) : project.shortDescription;
+        const status = this.getStatusTranslation(project.status, currentLang);
+        
         return `
             <div class="project-card" data-project-id="${project.id}">
                 <div class="project-thumbnail">
-                    <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
-                    <div class="project-status ${statusClass}">${project.status}</div>
+                    <img src="${project.thumbnail}" alt="${title}" loading="lazy">
+                    <div class="project-status ${statusClass}">${status}</div>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-description">${project.shortDescription}</p>
+                    <h3 class="project-title">${title}</h3>
+                    <p class="project-description">${description}</p>
                     <div class="project-technologies">
                         ${technologies}
                         ${project.technologies.length > 4 ? 
@@ -135,7 +146,7 @@ class ProjectsComponent {
                     </div>
                     <div class="project-links">
                         <a href="${project.demoUrl}" target="_blank" class="project-link demo">
-                            <span>👁️</span> Demo
+                            <span>👁️</span> ${currentLang === 'en' ? 'Demo' : 'Demo'}
                         </a>
                         <a href="${project.githubUrl}" target="_blank" class="project-link github">
                             <span>📁</span> GitHub
@@ -146,10 +157,52 @@ class ProjectsComponent {
         `;
     }
     
+    getCurrentLanguage() {
+        // Dil sisteminden mevcut dili al
+        if (typeof languageSystem !== 'undefined' && languageSystem.getCurrentLanguage) {
+            return languageSystem.getCurrentLanguage();
+        }
+        return 'tr'; // Varsayılan dil
+    }
+    
+    getStatusTranslation(status, lang = 'tr') {
+        const statusMap = {
+            'tr': {
+                'Tamamlandı': 'Tamamlandı',
+                'Devam Ediyor': 'Devam Ediyor',
+                'Planlama': 'Planlama',
+                'Durduruldu': 'Durduruldu',
+                'Completed': 'Tamamlandı',
+                'In Progress': 'Devam Ediyor',
+                'Planning': 'Planlama',
+                'Stopped': 'Durduruldu'
+            },
+            'en': {
+                'Tamamlandı': 'Completed',
+                'Devam Ediyor': 'In Progress',
+                'Planlama': 'Planning',
+                'Durduruldu': 'Stopped',
+                'Completed': 'Completed',
+                'In Progress': 'In Progress',
+                'Planning': 'Planning',
+                'Stopped': 'Stopped'
+            }
+        };
+        
+        return statusMap[lang]?.[status] || status;
+    }
+    
     updateProjectCards() {
         const grid = $('#projects-grid');
         if (!grid) return;
         
+        // Loading durumunu kontrol et
+        if (this.isLoading) {
+            grid.innerHTML = this.getLoadingHTML();
+            return;
+        }
+        
+        // Proje kartlarını güncelle
         grid.innerHTML = this.getProjectsHTML();
         this.bindProjectEvents();
     }
@@ -169,6 +222,14 @@ class ProjectsComponent {
             });
         }
     }
+    
+    bindLanguageEvents() {
+        // Dil değiştiğinde projeleri yeniden render et
+        document.addEventListener('languageChanged', () => {
+            this.updateProjectCards();
+        });
+    }
+    
     
     bindProjectEvents() {
         // Project card clicks
@@ -246,6 +307,8 @@ class ProjectsComponent {
     }
     
     getProjectModalHTML(project) {
+        const t = languageSystem.getTranslation;
+        
         const features = project.features.map(feature => 
             `<li>${feature}</li>`
         ).join('');
@@ -270,27 +333,27 @@ class ProjectsComponent {
                     
                     <div class="project-details">
                         <div class="detail-section">
-                            <h3>Özellikler</h3>
+                            <h3>${t('projects.details.features', 'Özellikler')}</h3>
                             <ul>${features}</ul>
                         </div>
                         
                         <div class="detail-section">
-                            <h3>Zorluklar</h3>
+                            <h3>${t('projects.details.challenges', 'Zorluklar')}</h3>
                             <ul>${challenges}</ul>
                         </div>
                         
                         <div class="detail-section">
-                            <h3>Öğrenilenler</h3>
+                            <h3>${t('projects.details.learnings', 'Öğrenilenler')}</h3>
                             <ul>${learnings}</ul>
                         </div>
                     </div>
                     
                     <div class="project-links">
                         <a href="${project.demoUrl}" target="_blank" class="project-link demo">
-                            <span>👁️</span> Canlı Demo
+                            <span>👁️</span> ${t('projects.actions.liveDemo', 'Canlı Demo')}
                         </a>
                         <a href="${project.githubUrl}" target="_blank" class="project-link github">
-                            <span>📁</span> GitHub
+                            <span>📁</span> ${t('projects.actions.github', 'GitHub')}
                         </a>
                     </div>
                 </div>

@@ -1,0 +1,68 @@
+{
+  "language": "en",
+  "languageName": "English",
+  "direction": "ltr",
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Welcome to My Project Showcase Page",
+    "subtitle": "Your portfolio site is being prepared...",
+    "description": "Modern, responsive and user-friendly portfolio site. A professional website developed with clean architecture principles and organized in a modular structure."
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Discover the projects I've developed. Each project is a solution that solves real-world problems, created with different technologies and approaches.",
+    "filters": {
+      "all": "All",
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile Development",
+      "desktopApplications": "Desktop Applications",
+      "dataScience": "Data Science"
+    },
+    "search": {
+      "placeholder": "Search projects...",
+      "noResults": "No projects found matching your criteria."
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "planning": "Planning",
+      "stopped": "Stopped"
+    },
+    "actions": {
+      "demo": "Demo",
+      "github": "GitHub",
+      "liveDemo": "Live Demo"
+    },
+    "details": {
+      "features": "Features",
+      "challenges": "Challenges",
+      "learnings": "Learnings"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Learn more about me"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My technology competencies and areas of expertise"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with me",
+    "email": "Email",
+    "description": "You can contact me for your projects, collaboration offers or any questions."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "menu": "Toggle menu"
+  }
+}

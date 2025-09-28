@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Sağbil - Portföy</title>
-    <meta name="description" content="Mustafa Sağbil'in kişisel portföy sitesi">
+    <title>İletişim - Mustafa Sağbil</title>
+    <meta name="description" content="Mustafa Sağbil ile iletişime geçin">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
         <div class="navbar-container">
             <!-- Logo/Brand -->
             <div class="navbar-brand">
-                <a href="#ana-sayfa" class="brand-link">
+                <a href="index.html" class="brand-link">
                     <span class="brand-text">Mustafa Sağbil</span>
                 </a>
             </div>
@@ -44,7 +44,7 @@
                         <a href="#yetenekler" class="nav-link">Yetenekler</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">İletişim</a>
+                        <a href="contact.html" class="nav-link active">İletişim</a>
                     </li>
                 </ul>
                 
@@ -57,12 +57,33 @@
         </div>
     </nav>
 
-    <main id="ana-sayfa" class="ana-container">
-        <div class="merhaba-kutusu">
-            <h1 class="merhaba-baslik">Projelerimi Tanıttığım Sayfama Hoşgeldiniz</h1>
+    <!-- İletişim Ana Bölümü -->
+    <main class="contact-main">
+        <div class="contact-hero">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title" data-translate="contact.title">İletişim</h1>
+                <p class="contact-hero-subtitle" data-translate="contact.subtitle">Benimle iletişime geçin</p>
+            </div>
+        </div>
+
+        <!-- İletişim Kartı -->
+        <div class="contact-card-container">
+            <div class="contact-card">
+                <div class="contact-icon-large">
+                    <span>📧</span>
+                </div>
+                <div class="contact-info-large">
+                    <h2 class="contact-email-title" data-translate="contact.email">E-posta</h2>
+                    <a href="mailto:mustafa.sagbil@gmail.com" class="contact-email-link">
+                        mustafa.sagbil@gmail.com
+                    </a>
+                    <p class="contact-description" data-translate="contact.description">
+                        Projeleriniz, işbirliği teklifleri veya herhangi bir sorunuz için benimle iletişime geçebilirsiniz.
+                    </p>
+                </div>
+            </div>
         </div>
     </main>
-
 
     <!-- JavaScript -->
     <script type="module" src="assets/js/main.js"></script>
