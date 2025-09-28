@@ -51,7 +51,16 @@
   },
   "skills": {
     "title": "Yetenekler",
-    "subtitle": "Teknoloji yeterliliklerim ve uzmanlık alanlarım"
+    "subtitle": "Teknoloji yeterliliklerim ve uzmanlık alanlarım",
+    "elektronik": "Elektronik",
+    "gomulu-yazilim": "Gömülü Yazılım",
+    "iot": "IoT",
+    "proje-organizasyonu": "Proje Organizasyonu",
+    "flutter": "Flutter",
+    "pcb-dizayn": "PCB Devre Dizaynı",
+    "lehimleme": "Lehimleme",
+    "devre-analizi": "Devre Analizi ve Tamiri",
+    "mobil-gelistirme": "Mobil Uygulama Geliştirme"
   },
   "contact": {
     "title": "İletişim",

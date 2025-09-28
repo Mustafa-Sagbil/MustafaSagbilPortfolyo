@@ -51,7 +51,16 @@
   },
   "skills": {
     "title": "Skills",
-    "subtitle": "My technology competencies and areas of expertise"
+    "subtitle": "My technology competencies and areas of expertise",
+    "elektronik": "Electronics",
+    "gomulu-yazilim": "Embedded Software",
+    "iot": "IoT",
+    "proje-organizasyonu": "Project Organization",
+    "flutter": "Flutter",
+    "pcb-dizayn": "PCB Circuit Design",
+    "lehimleme": "Soldering",
+    "devre-analizi": "Circuit Analysis and Repair",
+    "mobil-gelistirme": "Mobile App Development"
   },
   "contact": {
     "title": "Contact",

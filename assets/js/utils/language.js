@@ -59,6 +59,7 @@ class LanguageSystem {
         this.updateHomeContent();
         this.updateProjectsContent();
         this.updateContactContent();
+        this.updateSkillsContent();
         
         // Dil değiştirici butonunu güncelle
         this.updateLanguageSwitcher();
@@ -78,6 +79,8 @@ class LanguageSystem {
                 translationKey = 'projects';
             } else if (href && href.includes('contact.html')) {
                 translationKey = 'contact';
+            } else if (href && href.includes('skills.html')) {
+                translationKey = 'skills';
             } else if (href && href.includes('#hakkimda')) {
                 translationKey = 'about';
             } else if (href && href.includes('#yetenekler')) {
@@ -144,6 +147,20 @@ class LanguageSystem {
         });
     }
     
+    updateSkillsContent() {
+        // Yetenekler sayfasındaki data-translate attribute'larını işle
+        const elements = $$('[data-translate]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const translation = this.getTranslation(key);
+            if (translation) {
+                element.textContent = translation;
+            }
+        });
+        
+        console.log('Yetenekler sayfası içeriği güncellendi:', elements.length, 'element');
+    }
+    
     updateLanguageSwitcher() {
         const switcher = $('.language-switcher');
         if (switcher) {
@@ -208,6 +225,8 @@ class LanguageSystem {
             }
         });
         document.dispatchEvent(event);
+        
+        console.log('Dil değişim eventi gönderildi:', newLanguage);
     }
     
     // Public methods

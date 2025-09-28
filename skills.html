@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetenekler - Mustafa Sağbil</title>
+    <meta name="description" content="Mustafa Sağbil'in teknoloji yeterlilikleri ve uzmanlık alanları">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo/Brand -->
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-text">Mustafa Sağbil</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Menüyü aç/kapat">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="navbar-menu" id="navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">Projeler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hakkimda" class="nav-link">Hakkımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="skills.html" class="nav-link active">Yetenekler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">İletişim</a>
+                    </li>
+                </ul>
+                
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="tr">Türkçe</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Yetenekler Ana Bölümü -->
+    <main class="skills-main">
+        <div class="skills-hero">
+            <div class="skills-hero-content">
+                <h1 class="skills-hero-title" data-translate="skills.title">Yetenekler</h1>
+                <p class="skills-hero-subtitle" data-translate="skills.subtitle">Teknoloji yeterliliklerim ve uzmanlık alanlarım</p>
+            </div>
+        </div>
+
+        <!-- Yetenekler Grid -->
+        <div class="skills-content">
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-card" data-skill="elektronik">
+                        <div class="skill-icon">⚡</div>
+                        <h3 class="skill-name" data-translate="skills.elektronik">Elektronik</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="gomulu-yazilim">
+                        <div class="skill-icon">🔧</div>
+                        <h3 class="skill-name" data-translate="skills.gomulu-yazilim">Gömülü Yazılım</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="iot">
+                        <div class="skill-icon">🌐</div>
+                        <h3 class="skill-name" data-translate="skills.iot">IoT</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="proje-organizasyonu">
+                        <div class="skill-icon">📋</div>
+                        <h3 class="skill-name" data-translate="skills.proje-organizasyonu">Proje Organizasyonu</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="flutter">
+                        <div class="skill-icon">📱</div>
+                        <h3 class="skill-name" data-translate="skills.flutter">Flutter</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="pcb-dizayn">
+                        <div class="skill-icon">🔌</div>
+                        <h3 class="skill-name" data-translate="skills.pcb-dizayn">PCB Devre Dizaynı</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="lehimleme">
+                        <div class="skill-icon">🔥</div>
+                        <h3 class="skill-name" data-translate="skills.lehimleme">Lehimleme</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="devre-analizi">
+                        <div class="skill-icon">🔍</div>
+                        <h3 class="skill-name" data-translate="skills.devre-analizi">Devre Analizi ve Tamiri</h3>
+                    </div>
+                    
+                    <div class="skill-card" data-skill="mobil-gelistirme">
+                        <div class="skill-icon">📲</div>
+                        <h3 class="skill-name" data-translate="skills.mobil-gelistirme">Mobil Uygulama Geliştirme</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

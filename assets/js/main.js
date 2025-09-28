@@ -3,9 +3,10 @@
  * Tüm component'leri başlatır ve genel işlevleri yönetir
  */
 
-import { domReady } from './utils/helpers.js';
+import { domReady, $, $$ } from './utils/helpers.js';
 import Navbar from './components/navbar.js';
 import ProjectsComponent from './components/projects.js';
+import SkillsComponent from './components/skills.js';
 import navigationSystem from './utils/navigation.js';
 import languageSystem from './utils/language.js';
 
@@ -41,6 +42,11 @@ class Portfolio {
         // İletişim sayfası için dil sistemini başlat
         if (window.location.pathname.includes('contact.html')) {
             this.initializeContactPage();
+        }
+        
+        // Yetenekler component'ini yetenekler sayfasında başlat
+        if (window.location.pathname.includes('skills.html')) {
+            this.skills = new SkillsComponent();
         }
         
         // Diğer component'ler buraya eklenecek
