@@ -1,0 +1,369 @@
+/* 
+ * Mustafa Sağbil Portföy - Projects Component
+ * Projeler bölümü stilleri
+ */
+
+/* Projects Section */
+.projects-section {
+    padding: var(--spacing-cok-buyuk) 0;
+    background: var(--arka-plan-renk);
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-buyuk);
+}
+
+/* Section Header */
+.projects-header {
+    text-align: center;
+    margin-bottom: var(--spacing-cok-buyuk);
+}
+
+.projects-title {
+    font-size: var(--font-boyut-dev);
+    font-weight: 700;
+    color: var(--metin-renk);
+    margin-bottom: var(--spacing-normal);
+    background: linear-gradient(135deg, var(--ana-renk), var(--ikincil-renk));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.projects-subtitle {
+    font-size: var(--font-boyut-buyuk);
+    color: var(--metin-acik);
+    margin-bottom: var(--spacing-buyuk);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filters */
+.projects-filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-normal);
+    margin-bottom: var(--spacing-cok-buyuk);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: var(--spacing-kucuk) var(--spacing-normal);
+    border: 2px solid var(--ana-renk);
+    background: transparent;
+    color: var(--ana-renk);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--gecis-sure) ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--ana-renk);
+    color: var(--beyaz);
+    transform: translateY(-2px);
+    box-shadow: var(--golge);
+}
+
+/* Search */
+.projects-search {
+    max-width: 400px;
+    margin: 0 auto var(--spacing-cok-buyuk);
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: var(--spacing-normal) var(--spacing-buyuk) var(--spacing-normal) 3rem;
+    border: 2px solid rgba(37, 99, 235, 0.2);
+    border-radius: var(--border-radius);
+    font-size: var(--font-boyut-normal);
+    background: var(--beyaz);
+    color: var(--metin-renk);
+    transition: all var(--gecis-sure) ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--ana-renk);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: var(--spacing-normal);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--metin-acik);
+    font-size: 1.2rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-buyuk);
+    margin-bottom: var(--spacing-cok-buyuk);
+}
+
+/* Project Card */
+.project-card {
+    background: var(--beyaz);
+    border-radius: var(--border-radius);
+    box-shadow: var(--golge);
+    overflow: hidden;
+    transition: all var(--gecis-sure) ease;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--golge-buyuk);
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--ana-renk), var(--ikincil-renk));
+    position: relative;
+    overflow: hidden;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--gecis-sure) ease;
+}
+
+.project-card:hover .project-thumbnail img {
+    transform: scale(1.05);
+}
+
+.project-status {
+    position: absolute;
+    top: var(--spacing-normal);
+    right: var(--spacing-normal);
+    padding: var(--spacing-kucuk) var(--spacing-normal);
+    border-radius: var(--border-radius-kucuk);
+    font-size: var(--font-boyut-kucuk);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-status.completed {
+    background: #10b981;
+    color: white;
+}
+
+.project-status.in-progress {
+    background: #f59e0b;
+    color: white;
+}
+
+.project-status.planning {
+    background: #6b7280;
+    color: white;
+}
+
+.project-content {
+    padding: var(--spacing-buyuk);
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--metin-renk);
+    margin-bottom: var(--spacing-kucuk);
+    line-height: 1.3;
+}
+
+.project-description {
+    color: var(--metin-acik);
+    font-size: var(--font-boyut-normal);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-normal);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-kucuk);
+    margin-bottom: var(--spacing-normal);
+}
+
+.tech-tag {
+    padding: 0.25rem var(--spacing-kucuk);
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--ana-renk);
+    border-radius: var(--border-radius-kucuk);
+    font-size: var(--font-boyut-kucuk);
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-normal);
+    justify-content: space-between;
+}
+
+.project-link {
+    flex: 1;
+    padding: var(--spacing-kucuk) var(--spacing-normal);
+    text-align: center;
+    text-decoration: none;
+    border-radius: var(--border-radius-kucuk);
+    font-weight: 500;
+    transition: all var(--gecis-sure) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-kucuk);
+}
+
+.project-link.demo {
+    background: var(--ana-renk);
+    color: var(--beyaz);
+}
+
+.project-link.demo:hover {
+    background: var(--ikincil-renk);
+    transform: translateY(-2px);
+}
+
+.project-link.github {
+    background: transparent;
+    color: var(--metin-renk);
+    border: 2px solid var(--metin-acik);
+}
+
+.project-link.github:hover {
+    background: var(--metin-renk);
+    color: var(--beyaz);
+    border-color: var(--metin-renk);
+}
+
+/* Project Modal */
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-buyuk);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--gecis-sure) ease;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--beyaz);
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform var(--gecis-sure) ease;
+}
+
+.project-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-normal);
+    right: var(--spacing-normal);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--metin-acik);
+    cursor: pointer;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--gecis-sure) ease;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--metin-renk);
+}
+
+/* Loading State */
+.projects-loading {
+    text-align: center;
+    padding: var(--spacing-cok-buyuk);
+    color: var(--metin-acik);
+}
+
+.projects-empty {
+    text-align: center;
+    padding: var(--spacing-cok-buyuk);
+    color: var(--metin-acik);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-normal);
+    }
+    
+    .projects-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 200px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        margin: var(--spacing-normal);
+        max-height: calc(100vh - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 0 var(--spacing-normal);
+    }
+    
+    .projects-title {
+        font-size: 2rem;
+    }
+    
+    .projects-subtitle {
+        font-size: 1.125rem;
+    }
+}

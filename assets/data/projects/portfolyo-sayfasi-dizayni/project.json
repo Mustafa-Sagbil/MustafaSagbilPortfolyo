@@ -1,0 +1,66 @@
+{
+  "id": "portfolyo-sayfasi-dizayni",
+  "title": "Portföy Sayfası Dizaynı",
+  "description": "Modern, responsive ve kullanıcı dostu portföy sitesi tasarımı. Temiz mimari prensipleri ile geliştirilmiş, modüler yapıda organize edilmiş profesyonel web sitesi.",
+  "shortDescription": "Kişisel portföy sitesi için modern tasarım ve geliştirme",
+  "technologies": [
+    "HTML5",
+    "CSS3", 
+    "JavaScript",
+    "GitHub Pages",
+    "GitHub Actions",
+    "Responsive Design"
+  ],
+  "category": "Web Development",
+  "status": "Tamamlandı",
+  "date": "2025-09-28",
+  "thumbnail": "images/thumbnail.jpg",
+  "images": [
+    "images/screenshot-desktop.jpg",
+    "images/screenshot-tablet.jpg",
+    "images/screenshot-mobile.jpg"
+  ],
+  "demoUrl": "https://mustafa-sagbil.github.io/MustafaSagbilPortfolyo/",
+  "githubUrl": "https://github.com/Mustafa-Sagbil/MustafaSagbilPortfolyo",
+  "features": [
+    "Responsive tasarım (Mobile-first approach)",
+    "Modern CSS Grid ve Flexbox kullanımı",
+    "CSS Variables ile tutarlı renk yönetimi",
+    "GitHub Pages ile otomatik deployment",
+    "GitHub Actions workflow sistemi",
+    "Modüler JavaScript yapısı",
+    "Accessibility standartlarına uygunluk",
+    "Dark mode desteği",
+    "Smooth scroll ve animasyonlar",
+    "SEO optimizasyonu"
+  ],
+  "challenges": [
+    "Modüler yapı oluşturma ve CSS ayrıştırması",
+    "Responsive tasarım optimizasyonu",
+    "GitHub Actions ile otomatik deployment kurulumu",
+    "Cross-browser uyumluluk sağlama"
+  ],
+  "learnings": [
+    "CSS Variables ile tema yönetimi",
+    "GitHub Actions workflow yazma",
+    "Modüler JavaScript geliştirme",
+    "Responsive design best practices",
+    "Performance optimizasyonu teknikleri"
+  ],
+  "tools": [
+    "VS Code",
+    "Git",
+    "GitHub",
+    "Chrome DevTools",
+    "Lighthouse"
+  ],
+  "duration": "1 gün",
+  "difficulty": "Orta",
+  "tags": [
+    "frontend",
+    "responsive",
+    "modern",
+    "portfolio",
+    "github-pages"
+  ]
+}

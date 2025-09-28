@@ -5,6 +5,8 @@
 
 import { domReady } from './utils/helpers.js';
 import Navbar from './components/navbar.js';
+import ProjectsComponent from './components/projects.js';
+import navigationSystem from './utils/navigation.js';
 
 class Portfolio {
     constructor() {
@@ -23,10 +25,15 @@ class Portfolio {
         // Navbar'ı başlat
         this.navbar = new Navbar();
         
+        // Projeler component'ini başlat
+        this.projects = new ProjectsComponent();
+        
+        // Navigation system'i başlat
+        this.navigation = navigationSystem;
+        
         // Diğer component'ler buraya eklenecek
         // this.hero = new Hero();
         // this.about = new About();
-        // this.projects = new Projects();
         // this.contact = new Contact();
     }
     

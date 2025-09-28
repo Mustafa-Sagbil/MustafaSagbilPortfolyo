@@ -1,0 +1,10 @@
+# Placeholder Images
+
+Bu klasörde aşağıdaki görseller bulunmalıdır:
+
+- thumbnail.jpg (350x200px) - Proje kartı için küçük görsel
+- screenshot-desktop.jpg (1200x800px) - Desktop görünümü
+- screenshot-tablet.jpg (768x1024px) - Tablet görünümü  
+- screenshot-mobile.jpg (375x667px) - Mobile görünümü
+
+Görseller WebP formatında optimize edilmiş olmalıdır.
