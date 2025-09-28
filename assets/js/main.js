@@ -25,11 +25,13 @@ class Portfolio {
         // Navbar'ı başlat
         this.navbar = new Navbar();
         
-        // Projeler component'ini başlat
-        this.projects = new ProjectsComponent();
-        
         // Navigation system'i başlat
         this.navigation = navigationSystem;
+        
+        // Projeler component'ini sadece projeler sayfasında başlat
+        if (window.location.pathname.includes('projects.html') || $('#projeler-container')) {
+            this.projects = new ProjectsComponent();
+        }
         
         // Diğer component'ler buraya eklenecek
         // this.hero = new Hero();
